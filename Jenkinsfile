@@ -1,8 +1,8 @@
 node {
-    environment {
-        registry = "docker_hub_account/repository_name"
-        registryCredential = 'dockerhub'
-    }
+//     environment {
+//         registry = "docker_hub_account/repository_name"
+//         registryCredential = 'dockerhub'
+//     }
     agent any
     stage('SCM Checkout'){
         git 'https://github.com/mniyonshuti/jenkins-maven'
