@@ -1,8 +1,8 @@
 node {
 
     environment {
-        registry = "YourDockerhubAccount/YourRepository"
-        registryCredential = 'dockerhub_id'
+        registry = "shatsibed"
+        registryCredential = 'docker_id'
         dockerImage = ''
     }
 
