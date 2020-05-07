@@ -1,4 +1,9 @@
 node {
+    environment {
+        registry = "docker_hub_account/repository_name"
+        registryCredential = 'dockerhub'
+    }
+    agent any
     stage('SCM Checkout'){
         git 'https://github.com/mniyonshuti/jenkins-maven'
     }
@@ -14,4 +19,13 @@ node {
     stage('Compile-Package'){
      sh 'mvn package'
     }
+
+    stage('Building image') {
+       steps{
+          script {
+            docker.build registry + ":$BUILD_NUMBER"
+          }
+       }
+    }
+
 }

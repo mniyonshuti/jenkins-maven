@@ -16,6 +16,6 @@ class DemoApplicationTest {
 
     @Test
     void add() {
-        assertEquals(demoApplication.add(2,2), 5);
+        assertEquals(demoApplication.add(2,2), 4);
     }
 }
