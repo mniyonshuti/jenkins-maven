@@ -16,16 +16,16 @@ node {
     stage('test'){
             sh 'mvn compiler:testCompile'
     }
-    stage('Compile-Package'){
+    stage('Package'){
      sh 'mvn package'
     }
 
-    stage('Building image') {
-       steps{
-          script {
-            docker.build registry + ":$BUILD_NUMBER"
-          }
-       }
-    }
+//     stage('Building image') {
+//        steps{
+//           script {
+//             docker.build registry + ":$BUILD_NUMBER"
+//           }
+//        }
+//     }
 
 }
