@@ -8,7 +8,7 @@ node {
     stage('Compile'){
         sh 'mvn compiler:compile'
     }
-    stage('Compile'){
+    stage('test'){
             sh 'mvn compiler:testCompile'
     }
     stage('Compile-Package'){
