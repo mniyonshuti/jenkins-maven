@@ -1,5 +1,7 @@
 node {
 
+    agent any
+
     environment {
         registry = "shatsibed"
         registryCredential = 'docker_id'
