@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        registry = "shatsibed"
+        registry = "shatsibed/test"
         registryCredential = 'docker_id'
         dockerImage = ''
     }
