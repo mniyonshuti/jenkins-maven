@@ -9,19 +9,29 @@ pipeline {
     }
 stages{
     stage('SCM Checkout'){
+    steps {}
         git 'https://github.com/mniyonshuti/jenkins-maven'
+        }
     }
     stage('Clean'){
+    steps{
          sh 'mvn clean'
+         }
     }
     stage('Compile'){
+        steps  {
         sh 'mvn compiler:compile'
+        }
     }
     stage('test'){
+    steps {
             sh 'mvn compiler:testCompile'
+            }
     }
     stage('Package'){
+    steps {
      sh 'mvn package'
+     }
     }
 
     stage('Building our image') {
