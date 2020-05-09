@@ -34,14 +34,14 @@ pipeline {
             }
         }
 
-        stage('Building our image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
-        stage('Deploy our image') {
+        stage('Deploy Docker Image') {
             steps {
                 script {
                     docker.withRegistry( '', registryCredential ) {
