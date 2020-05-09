@@ -7,7 +7,7 @@ pipeline {
         registryCredential = 'docker_id'
         dockerImage = ''
     }
-
+stages{
     stage('SCM Checkout'){
         git 'https://github.com/mniyonshuti/jenkins-maven'
     }
@@ -44,5 +44,6 @@ pipeline {
         steps {
             sh "docker rmi $registry:$BUILD_NUMBER"
         }
+    }
     }
 }
