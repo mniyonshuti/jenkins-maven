@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        registry = "shatsibed/test"
+        registry = "mniyonshuti/test"
         registryCredential = 'niyo-docker'
         dockerImage = ''
     }
