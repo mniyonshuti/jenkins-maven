@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         registry = "shatsibed/test"
-        registryCredential = 'docker_id'
+        registryCredential = 'niyo-docker'
         dockerImage = ''
     }
     stages{
