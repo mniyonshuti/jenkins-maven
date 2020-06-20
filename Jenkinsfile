@@ -55,5 +55,16 @@ pipeline {
                 sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
+
+        stage('Deploy to AWS') {
+            environment {
+               DOCKER_HUB_LOGIN = credentials('niyo-docker')
+            }
+            steps {
+                withAWS(credentials: 'niyo-aws-credential', region: env.REGION) {
+                  sh './gradlew awsCfnMigrateStack awsCfnWaitStackComplete -PsubnetId=$SUBNET_ID -PdockerHubUsername=$DOCKER_HUB_LOGIN_USR -Pregion=$REGION'
+                }
+            }
+        }
     }
 }
