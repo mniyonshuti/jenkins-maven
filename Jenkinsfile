@@ -62,7 +62,7 @@ pipeline {
             }
             steps {
                 withAWS(credentials: 'niyo-aws-credential', region: env.REGION) {
-                  sh './gradlew awsCfnMigrateStack awsCfnWaitStackComplete -PsubnetId=$SUBNET_ID -PdockerHubUsername=$DOCKER_HUB_LOGIN_USR -Pregion=$REGION'
+                  sh './mvn awsCfnMigrateStack awsCfnWaitStackComplete -PsubnetId=$SUBNET_ID -PdockerHubUsername=$DOCKER_HUB_LOGIN_USR -Pregion=$REGION'
                 }
             }
         }
